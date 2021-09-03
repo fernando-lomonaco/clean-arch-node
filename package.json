@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/fernando-lomonaco/clean-arch-node/issues"
   },
-  "homepage": "https://github.com/fernando-lomonaco/clean-arch-node#readme"
+  "homepage": "https://github.com/fernando-lomonaco/clean-arch-node#readme",
+  "devDependencies": {
+    "standard": "^16.0.3"
+  }
 }
