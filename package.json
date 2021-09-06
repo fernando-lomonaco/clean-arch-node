@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "test:staged": "npm test -- --findRelatedTests --silent"
+    "test:staged": "npm test -- --findRelatedTests --silent",
+    "prepare": "husky install",
+    "pre-commit": "lint-staged"
   },
   "standar": {
     "env": [
