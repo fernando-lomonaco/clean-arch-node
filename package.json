@@ -6,6 +6,7 @@
   "scripts": {
     "test": "jest --colors --noStackTrace --passWithNoTests --runInBand",
     "test:staged": "npm test -- --findRelatedTests --silent",
+    "test:ci": "jest --coverage --silent",
     "prepare": "husky install",
     "pre-commit": "lint-staged"
   },
