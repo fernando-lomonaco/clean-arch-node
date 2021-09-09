@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --colors --noStackTrace --passWithNoTests --runInBand",
-    "test:staged": "npm test -- --findRelatedTests --silent",
-    "test:ci": "jest --coverage --silent",
+    "test:unit": "npm test -- --watch",
+    "test:staged": "npm test -- --findRelatedTests",
+    "test:ci": "npm test -- --coverage",
     "prepare": "husky install",
     "pre-commit": "lint-staged"
   },
