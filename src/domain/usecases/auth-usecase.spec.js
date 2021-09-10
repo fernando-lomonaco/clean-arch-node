@@ -66,6 +66,6 @@ describe('Auth Case', () => {
   test('Should return null if LoadUserByEmailRepository returns null ', async () => {
     const { sut } = makeSut()
     const accessToken = await sut.auth('invalid_email@mail.com', 'any_password')
-    expect(accessToken).toBe(null)
+    expect(accessToken).toBeNull()
   })
 })
