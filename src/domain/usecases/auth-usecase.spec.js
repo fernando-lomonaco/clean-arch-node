@@ -5,7 +5,7 @@ class AuthCase {
 }
 
 describe('Auth Case', () => {
-  test('Should return null if no email is provided', async () => {
+  test('Should throw if no email is provided', async () => {
     const sut = new AuthCase()
     const promise = sut.auth()
     expect(promise).rejects.toThrow()
