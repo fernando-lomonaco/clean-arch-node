@@ -1,8 +1,9 @@
 const { MissingParamError } = require('../../utils/errors')
 
 class AuthCase {
-  async auth (email) {
+  async auth (email, password) {
     if (!email) { throw new MissingParamError('email') }
+    if (!password) { throw new MissingParamError('email') }
   }
 }
 
@@ -11,5 +12,11 @@ describe('Auth Case', () => {
     const sut = new AuthCase()
     const promise = sut.auth()
     expect(promise).rejects.toThrow(new MissingParamError('email'))
+  })
+
+  test('Should throw if no password is provided', async () => {
+    const sut = new AuthCase()
+    const promise = sut.auth('any_email@mail.com')
+    expect(promise).rejects.toThrow(new MissingParamError('password'))
   })
 })
