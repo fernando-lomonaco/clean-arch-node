@@ -12,14 +12,11 @@ module.exports = class AuthCase {
     if (!password) { throw new MissingParamError('password') }
 
     const user = await this.loadUserByEmailRepository.load(email)
-    if (!user) {
-      return null
+    const isValid = user && await this.encrypterSpy.compare(password, user.password)
+    if (isValid) {
+      const accessToken = await this.tokenGeneratorSpy.generate(user.id)
+      return accessToken
     }
-    const isValid = await this.encrypterSpy.compare(password, user.password)
-    if (!isValid) {
-      return null
-    }
-    const accessToken = await this.tokenGeneratorSpy.generate(user.id)
-    return accessToken
+    return null
   }
 }
