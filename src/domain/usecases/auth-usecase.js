@@ -13,5 +13,6 @@ module.exports = class AuthCase {
     if (!user) {
       return null
     }
+    return null
   }
 }
